@@ -38,4 +38,5 @@ export async function getSingleLeaf(id) {
 
 export async function createLeaf(leaf) {
   const response = await client.from('leaves').insert([leaf]);
+  return checkError(response);
 }

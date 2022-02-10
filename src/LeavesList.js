@@ -1,5 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Leaf from './Leaf';
+import { getLeaves } from './services/fetch-utils';
 
 export default function LeavesList() {
-  return <div>LeavesList</div>;
+  const [leaves, setLeaves] = useState([]);
+
+  useEffect(() => {
+    async function onLoad() {
+      const data = await getLeaves();
+      setLeaves(data);
+    }
+    onLoad();
+  }, []);
+  return <div>
+    {
+      leaves.map((leaf, i) => <Leaf key={leaf + i} {...leaf} />)
+    }
+  </div>;
 }

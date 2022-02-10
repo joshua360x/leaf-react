@@ -27,11 +27,15 @@ export async function logout() {
 // ----------------------------------------------
 
 export async function getLeaves() {
-  const response = await client.from('leaf').select();
+  const response = await client.from('leaves').select();
   return checkError(response);
 }
 
 export async function getSingleLeaf(id) {
-  const response = await client.from('leaf').select().match({ id }).single();
+  const response = await client.from('leaves').select().match({ id }).single();
   return checkError(response);
+}
+
+export async function createLeaf(leaf) {
+  const response = await client.from('leaves').insert([leaf]);
 }

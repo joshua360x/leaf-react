@@ -24,18 +24,18 @@ function App() {
 
         <main>
           <Switch>
-            <Route exact to="/">
+            <Route exact path="/">
               {validUser ? <Redirect exact to="/leaves" /> : <Auth setValidUser={setValidUser} />}
             </Route>
-            <Route exact to="/leaves">
+            <Route exact path="/leaves">
               {validUser ? <LeavesList /> : <Redirect to="/" />}
             </Route>
 
-            <Route exact to="/create-leaf">
+            <Route exact path="/create-leaf">
               {validUser ? <CreateLeaf /> : <Redirect to="/" />}
             </Route>
 
-            <Route exact to="/leaves/:id">
+            <Route exact path="/leaves/:id">
               {validUser ? <Details /> : <Redirect to="/" />}
             </Route>
             <Route path="*">

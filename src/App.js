@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { BrowserRouter as Router, Switch, NavLink, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
+import Auth from './Auth';
 import { useState } from 'react';
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route>
+          <Route exact to="/">
             {
-              validUser
+              validUser ? <Redirect exact to="/leaf-list" /> : <Auth setValidUser={setValidUser} />
             }
           </Route>
         </Switch>

@@ -4,7 +4,7 @@ import { getSingleLeaf } from './services/fetch-utils';
 
 export default function Details() {
   const [leaf, setLeaf] = useState({});
-
+  let { age, type, rating } = leaf;
 
   const { id } = useParams();
 
@@ -16,8 +16,10 @@ export default function Details() {
     onLoad();
   }, [id]);
   return (
-    <div>
-      <p>{leaf.age}</p>
+    <div className='details'>
+      <h2>This leaf is a {type}</h2>
+      <p>I am {age} years old</p>
+      <p>Most People give me a {rating} out 5 rating</p>
     </div>
   );
 }

@@ -14,11 +14,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/create-leaf">Create</NavLink>
-          <button onClick={logout}>Logout</button>
-        </header>
+        {validUser && (
+          <header>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/create-leaf">Create</NavLink>
+            <button onClick={logout}>Logout</button>
+          </header>
+        )}
 
         <main>
           <Switch>

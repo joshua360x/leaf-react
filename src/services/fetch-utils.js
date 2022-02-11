@@ -46,3 +46,9 @@ export async function updateLeaf(leaf, id) {
   console.log('🚀 ~ file: fetch-utils.js ~ line 46 ~ updateLeaf ~ response', response);
   return checkError(response);
 }
+
+export async function deleteLeaf(id) {
+  const response = await client.from('leaves').delete().match({ id });
+  console.log('🚀 ~ file: fetch-utils.js ~ line 52 ~ deleteLeaf ~ response', response);
+  return checkError(response);
+}

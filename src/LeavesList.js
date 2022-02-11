@@ -11,7 +11,7 @@ export default function LeavesList() {
       setLeaves(data);
     }
     onLoad();
-  }, []);
+  }, [leaves]);
   return <div className='leaf-list'>
     {
       leaves.map((leaf, i) => <Leaf key={leaf + i} {...leaf} />)

@@ -42,5 +42,7 @@ export async function createLeaf(leaf) {
 }
 
 export async function updateLeaf(leaf, id) {
-  const response = await client.from('leaves').match({ id }).update({ leaf });
+  const response = await client.from('leaves').update(leaf).match({ id });
+  console.log('🚀 ~ file: fetch-utils.js ~ line 46 ~ updateLeaf ~ response', response);
+  return checkError(response);
 }

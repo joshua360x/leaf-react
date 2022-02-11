@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { getSingleLeaf } from './services/fetch-utils';
+import { getSingleLeaf, updateLeaf } from './services/fetch-utils';
 
 export default function UpdateLeaf() {
+  const [idLLeaf, setIDLeaf] = useState(0);
   const [age, setAge] = useState(1);
   const [season, setSeason] = useState('fall');
   const [type, setType] = useState('round');
@@ -10,22 +12,39 @@ export default function UpdateLeaf() {
   const [rating, setRating] = useState(1);
 
   const { id } = useParams();
-
+  const { push } = useHistory();
   useEffect(() => {
     async function onLoad() {
       const data = await getSingleLeaf(id);
+      console.log('🚀 ~ file: UpdateLeaf.js ~ line 19 ~ onLoad ~ data', data);
       const { age, season, type, description, rating } = data;
       setAge(age);
       setSeason(season);
       setType(type);
       setDescription(description);
       setRating(rating);
+      setIDLeaf(id);
     }
     onLoad();
   }, [id]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const leaf = {
+      age,
+      season,
+      type,
+      description,
+      rating,
+    };
+
+    await updateLeaf(leaf, idLLeaf);
+
+    push('/leaves');
+  };
+
   return (
-    <form className="update">
+    <form className="update" onSubmit={handleSubmit}>
       <h2>Hey You are about to Update Your Leaf </h2>
       <label>
         Age of Your Leaf

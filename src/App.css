@@ -37,7 +37,7 @@
   }
 }
 
-.create {
+.create, .update {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@
 
 }
 
-.create>* {
+.create>* , .update>* {
   margin: 10px;
 }
 

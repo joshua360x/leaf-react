@@ -12,7 +12,7 @@ export default function LeavesList() {
     }
     onLoad();
   }, []);
-  return <div>
+  return <div className='leaf-list'>
     {
       leaves.map((leaf, i) => <Leaf key={leaf + i} {...leaf} />)
     }

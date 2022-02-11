@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom';
 import { createLeaf } from './services/fetch-utils';
 
 export default function CreateLeaf() {
-  const [age, setAge] = useState();
-  const [season, setSeason] = useState();
-  const [type, setType] = useState();
-  const [description, setDescription] = useState();
-  const [rating, setRating] = useState();
+  const [age, setAge] = useState(1);
+  const [season, setSeason] = useState('fall');
+  const [type, setType] = useState('round');
+  const [description, setDescription] = useState('');
+  const [rating, setRating] = useState(1);
 
   const history = useHistory();
 

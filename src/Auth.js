@@ -16,8 +16,8 @@ export default function Auth({ setValidUser }) {
   }
 
   return (
-    <div>
-      <form onSubmit={(e) => e.preventDefault()}>
+    <div className='auth-container'>
+      <form className='auth' onSubmit={(e) => e.preventDefault()}>
         <label>
           Email
           <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" />

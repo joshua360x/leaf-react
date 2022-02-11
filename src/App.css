@@ -77,7 +77,13 @@
   width: 100px;
   height: 20px;
   display: none;
+  cursor: pointer;
 }
 .leaf:hover > .btn-special, .btn-special:hover {
   display: inline-block;
+}
+
+
+.updateLink {
+  text-decoration: none;
 }

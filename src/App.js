@@ -19,7 +19,6 @@ function App() {
           <header>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/create-leaf">Create</NavLink>
-            <NavLink to="/update-leaf">Update</NavLink>
             <button onClick={logout}>Logout</button>
           </header>
         )}
@@ -37,7 +36,7 @@ function App() {
               {validUser ? <CreateLeaf /> : <Redirect to="/" />}
             </Route>
 
-            <Route exact path="/update-leaf">
+            <Route exact path="/update-leaf/:id">
               {validUser ? <UpdateLeaf /> : <Redirect to="/" />}
             </Route>
 

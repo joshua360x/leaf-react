@@ -16,7 +16,7 @@ export default function UpdateLeaf() {
   useEffect(() => {
     async function onLoad() {
       const data = await getSingleLeaf(id);
-      console.log('🚀 ~ file: UpdateLeaf.js ~ line 19 ~ onLoad ~ data', data);
+
       const { age, season, type, description, rating } = data;
       setAge(age);
       setSeason(season);

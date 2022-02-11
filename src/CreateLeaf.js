@@ -56,7 +56,7 @@ export default function CreateLeaf() {
       </label>
       <label className='needDescript'>
         Description
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} type="text" />
+        <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Describe the Leaf...' type="text" />
       </label>
       <label>
         Rating

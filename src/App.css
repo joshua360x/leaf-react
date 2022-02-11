@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: beige;
+  height: 100vh;
+
 }
 
 .App-logo {
@@ -35,4 +38,94 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.create, .update {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.create>* , .update>* , .auth>* {
+  margin: 10px;
+}
+
+.needDescript {
+  text-align: center;
+  align-self: stretch;
+  vertical-align: middle;
+}
+
+.leaf {
+  margin: 2rem;
+  background-color: rgb(252, 252, 151);
+}
+
+.leaf-list {
+  margin: 20px;
+}
+
+.update {
+  background-color: gold;
+}
+
+.update:hover {
+  background-color: rgb(255, 196, 0);
+  border: 1px solid blanchedalmond ;
+
+}
+
+.delete {
+  background-color: salmon;
+}
+
+.delete:hover {
+  background-color: rgb(255, 94, 77);
+  border: 1px solid blanchedalmond ;
+
+}
+
+.btn-special {
+  width: 100px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.leaf:hover > .btn-special, .btn-special:hover {
+  display: inline-block;
+}
+
+.leaf:hover > .updateLink > .btn-special, .btn-special:hover {
+  display: inline-block;
+}
+.leaf:hover {
+  background-color: rgb(255, 255, 78);
+}
+
+
+.updateLink {
+  text-decoration: none;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+}
+
+.auth-container {
+  padding: 4rem;
+  margin: 0 auto;
+
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
 }

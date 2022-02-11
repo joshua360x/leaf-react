@@ -40,3 +40,7 @@ export async function createLeaf(leaf) {
   const response = await client.from('leaves').insert([leaf]);
   return checkError(response);
 }
+
+export async function updateLeaf(leaf, id) {
+  const response = await client.from('leaves').match({ id }).update({ leaf });
+}
